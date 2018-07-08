@@ -1,0 +1,60 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/*.iml
+**/.idea
+**/.gradle
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Java class files
+*.class
+*.DS_Store
+
+# Log files
+*.log
+
+#Vim files
+*.swp
+
+# Package files
+*.jar
+*.war
+*.ear
+
+#Temp files
+target/
+
+# JVM crash logs
+hs_err_pid*
+
+#Eclipse files
+**/.project
+**/.classpath
+**/.settings/
+**/.tern-project
+blog/bin/
+
+data/
+*.pid
+*.port
