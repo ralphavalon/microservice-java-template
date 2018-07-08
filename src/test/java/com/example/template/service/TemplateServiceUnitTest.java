@@ -19,6 +19,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.example.template.client.ProviderClient;
 import com.example.template.dao.TemplateDao;
 import com.example.template.model.Template;
 
@@ -28,6 +29,8 @@ public class TemplateServiceUnitTest {
 	
 	@MockBean
 	private TemplateDao templateDao;
+	@MockBean
+	private ProviderClient providerClient;
 	
 	@Autowired
 	private TemplateService templateService;
@@ -36,6 +39,7 @@ public class TemplateServiceUnitTest {
 	public void shouldSaveTemplate() {
 		templateService.save(new Template());
 		
+		verify(providerClient, times(1)).callProvider(any(Template.class));
 		verify(templateDao, times(1)).save(any(Template.class));
 	}
 	

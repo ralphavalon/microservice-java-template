@@ -39,3 +39,6 @@ spring:
         url: jdbc:h2:file:~/template_db
         user: root
         password: root
+        
+provider:
+    url: http://echo.jsontest.com/field/fieldValue/immutableField/immutableFieldValue

@@ -22,14 +22,6 @@ public class JsonHelper {
 		return json;
 	}
 	
-	public static JsonObject getRequestFileAsJsonObject(String file) {
-		return getJsonFileAsJsonObject(file, "request");
-	}
-	
-	public static JsonObject getResponseFileAsJsonObject(String file) {
-		return getJsonFileAsJsonObject(file, "response");
-	}
-	
 	public static String getRequestFileAsString(String file) {
 		return getJsonFileAsJsonObject(file, "request").toString();
 	}

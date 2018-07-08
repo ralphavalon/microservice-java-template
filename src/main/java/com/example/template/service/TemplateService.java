@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.example.template.client.ProviderClient;
 import com.example.template.dao.TemplateDao;
 import com.example.template.model.Template;
 
@@ -15,8 +16,11 @@ public class TemplateService {
 	
 	@Autowired
 	private TemplateDao templateDao;
+	@Autowired
+	private ProviderClient providerClient;
 	
 	public Template save(Template template) {
+		providerClient.callProvider(template);
 		return templateDao.save(template);
 	}
 
