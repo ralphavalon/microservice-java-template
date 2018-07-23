@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.template.config.swagger.ApiPageable;
 import com.example.template.controller.request.TemplateCreateRequest;
 import com.example.template.controller.request.TemplateUpdateRequest;
 import com.example.template.controller.response.TemplateCreateResponse;
@@ -26,7 +27,11 @@ import com.example.template.controller.response.TemplateResponseList;
 import com.example.template.model.Template;
 import com.example.template.service.TemplateService;
 
+import io.swagger.annotations.Api;
+import springfox.documentation.annotations.ApiIgnore;
+
 @RestController
+@Api(tags= {"templates"})
 public class TemplateController {
 
 	@Autowired
@@ -34,7 +39,8 @@ public class TemplateController {
 
 	@GetMapping(value = "/templates", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseStatus(code = HttpStatus.OK)
-	public Page<TemplateResponse> getTemplates(@PageableDefault Pageable pageable) {
+	@ApiPageable
+	public Page<TemplateResponse> getTemplates(@ApiIgnore @PageableDefault Pageable pageable) {
 		Page<Template> templates = templateService.getAll(pageable);
 		return new PageImpl<>(new TemplateResponseList(templates.getContent()), pageable, templates.getTotalElements());
 	}
