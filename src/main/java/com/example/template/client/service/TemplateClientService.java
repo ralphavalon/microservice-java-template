@@ -13,8 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.template.client.ProviderClient;
 import com.example.template.model.Template;
+import com.github.rozidan.springboot.logger.Loggable;
 
 @Service
+@Loggable(ignore=Exception.class)
 public class TemplateClientService implements ProviderClient {
 	
 	@Value("${provider.url}")

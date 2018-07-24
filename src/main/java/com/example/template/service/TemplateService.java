@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import com.example.template.client.ProviderClient;
 import com.example.template.dao.TemplateDao;
 import com.example.template.model.Template;
+import com.github.rozidan.springboot.logger.Loggable;
 
 @Service
+@Loggable(ignore=Exception.class)
 public class TemplateService {
 	
 	@Autowired

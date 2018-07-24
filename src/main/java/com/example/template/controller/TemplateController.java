@@ -26,11 +26,13 @@ import com.example.template.controller.response.TemplateResponse;
 import com.example.template.controller.response.TemplateResponseList;
 import com.example.template.model.Template;
 import com.example.template.service.TemplateService;
+import com.github.rozidan.springboot.logger.Loggable;
 
 import io.swagger.annotations.Api;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
+@Loggable(ignore=Exception.class)
 @Api(tags= {"templates"})
 public class TemplateController {
 

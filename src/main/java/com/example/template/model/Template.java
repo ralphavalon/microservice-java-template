@@ -11,9 +11,11 @@ import org.hibernate.id.UUIDGenerator;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter @Setter
 @EqualsAndHashCode(callSuper=false)
+@ToString
 @Entity
 public class Template extends DateAware {
 

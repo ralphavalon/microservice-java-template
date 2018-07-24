@@ -8,9 +8,12 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.web.client.RestTemplate;
 
+import com.github.rozidan.springboot.logger.EnableLogger;
+
 @SpringBootApplication
 @EnableRetry
 @EnableSpringDataWebSupport
+@EnableLogger
 public class TemplateApplication {
 
 	public static void main(String[] args) {
